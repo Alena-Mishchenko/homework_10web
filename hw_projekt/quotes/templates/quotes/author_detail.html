@@ -1,0 +1,20 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+<div class="author-details mt-5">
+    <h2>{{ author.fullname }}</h2>
+    <p><strong>Date of Birth:</strong> {{ author.born_date }}</p>
+    <p><strong>Location:</strong> {{ author.born_location }}</p>
+    <p><strong>Description:</strong> {{ author.description }}</p>
+</div>
+{% endblock %}
+<!-- <div class="author-details">
+    <h3 class="author-title">Albert Einstein</h3>
+    <p><strong>Born:</strong> <span class="author-born-date">March 14, 1879</span> <span class="author-born-location">in
+            Ulm, Germany</span></p>
+    <p><strong>Description:</strong></p>
+    <div class="author-description">
+        More:
+        http://en.wikipedia.org/wiki/Albert_E...http://www.nobelprize.org/nobel_prize...
+    </div>
+</div> -->

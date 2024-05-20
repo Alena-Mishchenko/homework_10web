@@ -1,0 +1,19 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Quotes for Tag: {{ tag }}</h2>
+    <div class="row">
+        {% for quote in quotes %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">{{ quote.quote }}</p>
+                    <p class="card-text">Author: {{ quote.author.fullname }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

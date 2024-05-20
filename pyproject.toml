@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "homework-10web"
+version = "0.1.0"
+description = ""
+authors = ["Alena-Mishchenko <131773665+Alena-Mishchenko@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+django = "^5.0.4"
+pymongo = {extras = ["srv", "tls"], version = "^4.6.3"}
+psycopg2 = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
