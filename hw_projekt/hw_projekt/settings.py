@@ -11,6 +11,20 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from config import config
+
+import os
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.meta.ua'
+EMAIL_PORT = config.EMAIL_PORT
+EMAIL_STARTTLS = False
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = config.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = config.EMAIL_HOST_PASSWORD
+DEFAULT_FROM_EMAIL = config.DEFAULT_FROM_EMAIL
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,8 +34,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-tldh$i#s^3i&ok2legqlk0^ryzcux)c^e5(qu%m!15%_nv604j"
+# SECRET_KEY ="django-insecure-tldh$i#s^3i&ok2legqlk0^ryzcux)c^e5(qu%m!15%_nv604j"
 
+SECRET_KEY = config.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -82,11 +97,16 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '7703',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': config.POSTGRES_DB,
+        'USER': config.POSTGRES_USER,
+        'PASSWORD': config.POSTGRES_PASSWORD,
+        'HOST': config.POSTGRES_HOST,
+        'PORT': config.POSTGRES_PORT,
+        # 'NAME': 'postgres',
+        # 'USER': 'postgres',
+        # 'PASSWORD': '7703',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '5432',
     }
 }
 

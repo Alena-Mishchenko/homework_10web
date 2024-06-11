@@ -11,6 +11,10 @@ requests = "^2.31.0"
 django = "^5.0.4"
 pymongo = {extras = ["srv", "tls"], version = "^4.6.3"}
 psycopg2 = "^2.9.9"
+python-dotenv = "^1.0.1"
+psycopg2-binary = "^2.9.9"
+pydantic = "^2.7.3"
+pydantic-settings = "^2.3.1"
 
 
 [build-system]
